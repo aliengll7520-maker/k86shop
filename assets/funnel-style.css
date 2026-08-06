@@ -1,0 +1,214 @@
+/* ==========================================================
+   K86SHOP Funnel Style
+   ========================================================== */
+
+:root{
+    --k86-primary:#e53935;
+    --k86-secondary:#ff6f00;
+    --k86-bg:#f8f8f8;
+    --k86-border:#e6e6e6;
+    --k86-text:#222;
+    --k86-radius:14px;
+    --k86-shadow:0 8px 24px rgba(0,0,0,.08);
+
+    --shopee:#ee4d2d;
+    --tiktok:#111111;
+    --lazada:#0f5bd7;
+}
+
+.k86-funnel{
+    max-width:1280px;
+    margin:30px auto;
+    padding:20px;
+    color:var(--k86-text);
+}
+
+.k86-layout{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:24px;
+}
+
+@media(max-width:992px){
+    .k86-layout{
+        grid-template-columns:1fr;
+    }
+}
+
+.k86-main,
+.k86-sidebar,
+.k86-card,
+.k86-product-box,
+.k86-timeline,
+.k86-countdown,
+.k86-cta{
+    background:#fff;
+    border:1px solid var(--k86-border);
+    border-radius:var(--k86-radius);
+    box-shadow:var(--k86-shadow);
+    overflow:hidden;
+}
+
+.k86-card,
+.k86-product-box,
+.k86-countdown,
+.k86-timeline{
+    padding:20px;
+    margin-bottom:20px;
+}
+
+.k86-title{
+    margin:0 0 15px;
+    color:var(--k86-primary);
+    font-size:28px;
+    font-weight:700;
+}
+
+.k86-subtitle{
+    color:#666;
+    margin-bottom:20px;
+}
+
+.k86-price{
+    font-size:34px;
+    font-weight:700;
+    color:var(--k86-secondary);
+}
+
+.k86-old-price{
+    color:#999;
+    text-decoration:line-through;
+}
+
+.k86-discount{
+    display:inline-block;
+    background:var(--k86-primary);
+    color:#fff;
+    padding:6px 12px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:700;
+}
+
+.k86-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:20px;
+}
+
+.k86-btn{
+    flex:1;
+    min-width:150px;
+    text-align:center;
+    text-decoration:none;
+    color:#fff;
+    padding:14px 18px;
+    border-radius:12px;
+    font-weight:700;
+    transition:.25s;
+}
+
+.k86-btn:hover{
+    transform:translateY(-2px);
+    opacity:.92;
+}
+
+.k86-btn-shopee{
+    background:var(--shopee);
+}
+
+.k86-btn-tiktok{
+    background:var(--tiktok);
+}
+
+.k86-btn-lazada{
+    background:var(--lazada);
+}
+
+.k86-countdown{
+    text-align:center;
+}
+
+.k86-countdown-timer{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin-top:15px;
+}
+
+.k86-time-box{
+    width:75px;
+    padding:12px;
+    background:linear-gradient(135deg,var(--k86-primary),var(--k86-secondary));
+    color:#fff;
+    border-radius:12px;
+}
+
+.k86-time-box span{
+    display:block;
+}
+
+.k86-time-value{
+    font-size:28px;
+    font-weight:700;
+}
+
+.k86-time-label{
+    font-size:12px;
+    opacity:.9;
+}
+
+.k86-tabs{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.k86-tab-btn{
+    border:none;
+    cursor:pointer;
+    background:#eee;
+    padding:10px 18px;
+    border-radius:999px;
+    font-weight:600;
+    transition:.25s;
+}
+
+.k86-tab-btn.active{
+    background:var(--k86-primary);
+    color:#fff;
+}
+
+.k86-tab-content{
+    display:none;
+}
+
+.k86-tab-content.active{
+    display:block;
+}
+
+.k86-tab-content h3{
+    margin-top:0;
+    color:var(--k86-primary);
+}
+
+.k86-cta{
+    padding:25px;
+    background:linear-gradient(135deg,var(--k86-primary),var(--k86-secondary));
+    color:#fff;
+    text-align:center;
+}
+
+.k86-cta h2,
+.k86-cta p{
+    color:#fff;
+}
+
+img{
+    max-width:100%;
+    display:block;
+    height:auto;
+    border-radius:12px;
+}

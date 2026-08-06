@@ -1,98 +1,34 @@
 <?php
-/**
- * File: render-layout.php
- * Layout 2 cột Frontend Funnel
- */
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Anti-Crash
-if ( empty( $funnel_data ) || ! is_array( $funnel_data ) ) {
-	return;
-}
-?>
+/*
+|--------------------------------------------------------------------------
+| DEBUG - HIỂN THỊ SLUG & DỮ LIỆU GITHUB
+|--------------------------------------------------------------------------
+*/
 
-<div class="k86-funnel-layout">
+$current_post_id = get_the_ID();
+$current_slug    = get_post_field( 'post_name', $current_post_id );
+$funnel_data     = K86Shop_Data_Bridge::get_funnel_data_by_post();
 
-	<!-- LEFT COLUMN -->
-	<main class="k86-main-column">
+echo '<div style="background:#fff3cd;border:2px solid #f0ad4e;padding:15px;margin:20px 0;font-family:monospace;font-size:14px;">';
 
-		<?php
-		// Hero / Tiêu đề
-		if ( ! empty( $funnel_data['hero'] ) ) {
-			echo $funnel_data['hero'];
-		}
+echo '<strong>Slug hiện tại của bài viết trên Web là:</strong> ';
+echo esc_html( $current_slug );
 
-		// Nội dung mở đầu
-		if ( ! empty( $funnel_data['intro'] ) ) {
-			echo $funnel_data['intro'];
-		}
+echo '<hr>';
 
-		// Mục lục
-		if ( ! empty( $funnel_data['toc'] ) ) {
-			echo $funnel_data['toc'];
-		}
+echo '<strong>Dữ liệu lấy từ GitHub về là:</strong>';
+echo '<pre>';
+print_r( $funnel_data );
+echo '</pre>';
 
-		// Timeline / Lịch trình
-		if ( ! empty( $funnel_data['timeline'] ) ) {
-			echo $funnel_data['timeline'];
-		}
+echo '</div>';
 
-		// Nội dung bài viết
-		if ( ! empty( $funnel_data['content'] ) ) {
-			echo $funnel_data['content'];
-		}
-
-		// Slider sản phẩm
-		if ( ! empty( $funnel_data['product_slider'] ) ) {
-			echo $funnel_data['product_slider'];
-		}
-
-		// Flash Sale
-		if ( ! empty( $funnel_data['flash_sale'] ) ) {
-			echo $funnel_data['flash_sale'];
-		}
-
-		// FAQ
-		if ( ! empty( $funnel_data['faq'] ) ) {
-			echo $funnel_data['faq'];
-		}
-		?>
-
-	</main>
-
-	<!-- RIGHT COLUMN -->
-	<aside class="k86-sidebar">
-
-		<?php
-		// Sản phẩm nổi bật
-		if ( ! empty( $funnel_data['featured_product'] ) ) {
-			echo $funnel_data['featured_product'];
-		}
-
-		// Countdown
-		if ( ! empty( $funnel_data['countdown'] ) ) {
-			echo $funnel_data['countdown'];
-		}
-
-		// Bài viết liên quan
-		if ( ! empty( $funnel_data['related_posts'] ) ) {
-			echo $funnel_data['related_posts'];
-		}
-
-		// Tags
-		if ( ! empty( $funnel_data['tags'] ) ) {
-			echo $funnel_data['tags'];
-		}
-
-		// Chia sẻ
-		if ( ! empty( $funnel_data['share'] ) ) {
-			echo $funnel_data['share'];
-		}
-		?>
-
-	</aside>
-
-</div>
+/*
+|--------------------------------------------------------------------------
+| PHẦN CODE RENDER GIAO DIỆN GIỮ NGUYÊN BÊN DƯỚI
+|--------------------------------------------------------------------------
+*/

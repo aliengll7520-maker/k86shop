@@ -6,55 +6,22 @@
 
 defined('ABSPATH') || exit;
 
-if (!class_exists('K86SHOP_Registry')) {
+/**
+ * Registry.
+ */
+class K86SHOP_Registry
+{
+    private $items = array();
 
-    final class K86SHOP_Registry
+    public function set($key, $value)
     {
-        /**
-         * Registered items.
-         *
-         * @var array
-         */
-        private array $items = [];
+        $this->items[$key] = $value;
+    }
 
-        /**
-         * Register an item.
-         */
-        public function register(string $key, mixed $value): void
-        {
-            $this->items[$key] = $value;
-        }
-
-        /**
-         * Get an item.
-         */
-        public function get(string $key): mixed
-        {
-            return $this->items[$key] ?? null;
-        }
-
-        /**
-         * Check if an item exists.
-         */
-        public function has(string $key): bool
-        {
-            return isset($this->items[$key]);
-        }
-
-        /**
-         * Return all registered items.
-         */
-        public function all(): array
-        {
-            return $this->items;
-        }
+    public function get($key)
+    {
+        return isset($this->items[$key]) ? $this->items[$key] : null;
     }
 }
-
-/*
-|--------------------------------------------------------------------------
-| Global Registry
-|--------------------------------------------------------------------------
-*/
 
 $GLOBALS['k86shop_registry'] = new K86SHOP_Registry();

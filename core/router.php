@@ -6,37 +6,15 @@
 
 defined('ABSPATH') || exit;
 
-if (!class_exists('K86SHOP_Router')) {
-
-    final class K86SHOP_Router
+/**
+ * Router.
+ */
+class K86SHOP_Router
+{
+    public function dispatch()
     {
-        /**
-         * Register routes.
-         */
-        public function register(): void
-        {
-            // Register admin routes.
-
-            // Register frontend routes.
-
-            // Register API routes.
-        }
-
-        /**
-         * Dispatch request.
-         */
-        public function dispatch(): void
-        {
-            // Route current request.
-        }
+        // Phiên bản nền chưa xử lý route.
     }
 }
 
-/*
-|--------------------------------------------------------------------------
-| Router Instance
-|--------------------------------------------------------------------------
-*/
-
 $GLOBALS['k86shop_router'] = new K86SHOP_Router();
-$GLOBALS['k86shop_router']->register();

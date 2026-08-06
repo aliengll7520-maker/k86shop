@@ -12,7 +12,7 @@ class K86Shop_Data_Bridge {
 
 	/**
 	 * GitHub RAW JSON URL
-	 * Thay bằng đường dẫn RAW JSON thực tế.
+	 * Đường dẫn RAW JSON thực tế kết nối kho dữ liệu K86SHOP-quanly
 	 */
 	const GITHUB_RAW_JSON = 'https://githubusercontent.com';
 
